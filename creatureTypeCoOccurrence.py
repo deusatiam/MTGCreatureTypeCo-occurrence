@@ -9,11 +9,10 @@ types_df = types_df.sort_values(by=['Count'], ascending=False)
 return_dict = {}
 
 for i in range(len(types_df)):
-    dict = types_df.iloc[i]['Co-occurrences']
-    sorted_dict = sorted(dict.items(), key=lambda x: x[1], reverse=True)
-    return_dict[types_df.iloc[i].name] = [sorted_dict, types_df.iloc[i]['Count']]
+    temp_dict = types_df.iloc[i]['Co-occurrences']
+    sorted_dict = sorted(temp_dict.items(), key=lambda x: x[1], reverse=True)
+    return_dict[types_df.iloc[i].name] = [dict(sorted_dict), types_df.iloc[i]['Count']]
 
 with open("CreatureTypeCoOccurrences.json", "w") as outfile:
     json.dump(return_dict, outfile)
 
-    
