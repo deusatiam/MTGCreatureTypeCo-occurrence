@@ -28,6 +28,8 @@ Another source of error when analyzing the results from the lens of building a c
 For example, Geralf, Visionary Stitcher (https://scryfall.com/card/vow/61/geralf-visionary-stitcher) is a Human Wizard so it might be played in a Human deck or a Wizard deck. 
 However, Geralf has card-specific synergies with Zombies that are not taken into account within co-occurrence analysis.
 
+Furthermore, the code does not distinguish between creature subtypes and non-creature subtypes. Artifact subtypes such as Equipment, as in the case of Blade of the Oni (https://scryfall.com/card/neo/89/blade-of-the-oni), or Land subtypes such as Forest, as in the case of Dryad Arbor (https://scryfall.com/card/tsr/277/dryad-arbor), are included in the dataset. Again, the co-occurrences of these subtypes are negligible when considering a tribal cube.
+
 This code does not take into account color identity, though that was the original intent of the project. 
 Color identities have been included in CreatureSubtypes.json.
 I realized I do not have the time to do additional analysis on creature type co-occurrence in regards to color identity, i.e. Which creature type co-occurrences are
